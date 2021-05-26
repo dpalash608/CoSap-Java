@@ -20,14 +20,26 @@ public class Employee_pojo {
 	@Column
 	private String EmpContact;
 	
+	@Column
+	private String password;
+	
 	public Employee_pojo() {
 	}
 
-	public Employee_pojo(String iNumber, String empName, String empMail, String empContact) {
+	public Employee_pojo(String iNumber, String empName, String empMail, String empContact,String password) {
 		this.iNumber = iNumber;
 		this.EmpName = empName;
 		this.EmpMail = empMail;
 		this.EmpContact = empContact;
+		this.password = password;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getiNumber() {
