@@ -27,7 +27,6 @@ public class VaccineService {
 	public Vaccine_pojo getVaccinebyid(String Date) {
 		Optional<Vaccine_pojo> vaccine = Vaccinerepo.findById(Date);
 		if (vaccine.isPresent()) {
-			System.out.println(vaccine.get().getDate());
 			System.out.println(vaccine.get().getStock());
 			return vaccine.get();
 		}

@@ -115,7 +115,6 @@ public class Controller {
 	//api/v1/vaccine
 	@PostMapping("vaccine")
 	public ResponseEntity<String> addvaccine(@RequestBody Vaccine_pojo vaccine) {
-		System.out.println("Adding a new Vaccine " + vaccine.getDate());
 		vaccineservice.addvaccine(vaccine);
 		return new ResponseEntity<String>("Adding Vaccines", HttpStatus.CREATED);
 	}

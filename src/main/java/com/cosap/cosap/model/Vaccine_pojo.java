@@ -9,8 +9,6 @@ public class Vaccine_pojo {
 	
 	
 	@Id
-	private String Date;
-	@Column
 	private String AgeGrp;
 	//A for less than 18 , B for 18-45 ,C for 45+
 	@Column
@@ -20,17 +18,9 @@ public class Vaccine_pojo {
 	public Vaccine_pojo() {
 	}
 
-	public Vaccine_pojo(String date, String ageGrp, String stock) {
-		this.Date = date;
+	public Vaccine_pojo(String ageGrp, String stock) {
 		this.AgeGrp = ageGrp;
 		this.Stock = stock;
-	}
-	
-	public String getDate() {
-		return Date;
-	}
-	public void setDate(String date) {
-		this.Date = date;
 	}
 	public String getAgeGrp() {
 		return AgeGrp;
