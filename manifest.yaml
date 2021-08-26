@@ -1,0 +1,7 @@
+---
+applications:
+  - name: testHanaConn
+    memory: 1024M
+    instances: 1
+    buildpack: sap_java_buildpack
+    path: target/cosap-0.0.1.jar

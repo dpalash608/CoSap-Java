@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.cosap</groupId>
 	<artifactId>cosap</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>cosap</name>
 	<description>Vaccine at SAP</description>
 	<properties>
@@ -27,9 +27,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
+			<groupId>com.sap.db.jdbc</groupId>
+			<artifactId>ngdbc</artifactId>
+			<version>2.3.55</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -43,6 +43,35 @@
 			</exclusions>
 		</dependency>
 	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<activatedProperties>local</activatedProperties>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>com.h2database</groupId>
+					<artifactId>h2</artifactId>
+					<scope>runtime</scope>
+				</dependency>
+			</dependencies>
+		</profile>
+
+		<profile>
+			<id>cf</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<activatedProperties>cf</activatedProperties>
+			</properties>
+		</profile>
+	</profiles>
 
 	<build>
 		<plugins>
