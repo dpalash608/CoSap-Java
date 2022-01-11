@@ -22,7 +22,7 @@ import com.cosap.cosap.service.CosapService;
 import com.cosap.cosap.service.RegisterService;
 import com.cosap.cosap.service.VaccineService;
 
-//This is controller file
+//This
 @RestController
 @RequestMapping("api/v1")
 public class Controller {
