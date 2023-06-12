@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cosap-app-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cosap-javacosap
+  template:
+    metadata:
+      labels:
+        app: cosap-javacosap
+    spec:
+      containers:
+        - name: cosap-javacosap
+          image: cosap-java_cosap
+          ports:
+            - containerPort: 8080
